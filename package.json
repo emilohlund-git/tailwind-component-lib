@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1-alpha",
+  "version": "0.1.4-alpha",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -26,7 +26,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
-    "push": "yarn version --no-git-tag-version --patch --new-version && git push"
+    "push": "yarn version --patch && git push"
   },
   "peerDependencies": {
     "react": ">=16"
