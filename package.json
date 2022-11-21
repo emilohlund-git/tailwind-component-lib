@@ -3,6 +3,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": "https://github.com/emilohlund-git/emil-component-lib.git",
   "files": [
     "dist",
     "src"
@@ -36,7 +37,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "emil-component-lib",
+  "name": "@emilohlund-git/emil-component-lib",
   "author": "Emil Ölund",
   "module": "dist/emil-component-lib.esm.js",
   "size-limit": [
