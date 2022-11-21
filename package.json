@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -37,16 +37,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@emilohlund-git/emil-component-lib",
+  "name": "@emilohlund-git/tailwind-component-lib",
   "author": "Emil Ölund",
-  "module": "dist/emil-component-lib.esm.js",
+  "module": "dist/tailwind-component-lib.esm.js",
   "size-limit": [
     {
-      "path": "dist/emil-component-lib.cjs.production.min.js",
+      "path": "dist/tailwind-component-lib.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/emil-component-lib.esm.js",
+      "path": "dist/tailwind-component-lib.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -91,5 +91,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
