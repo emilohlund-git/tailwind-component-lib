@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          always_auth: true
+          always-auth: true
       - run: yarn
       - run: yarn publish
         env:
