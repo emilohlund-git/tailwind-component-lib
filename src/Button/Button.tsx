@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { ButtonProps } from './Button.types';
-import { ButtonVariants } from '../../types/Variants';
-import { ButtonSizes } from '../../types/Sizes';
+import { ButtonVariants } from '../types/Variants';
+import { ButtonSizes } from '../types/Sizes';
 
 const getSizeStyles = (size: ButtonSizes) => {
   const small = 'py-2 px-6 text-lg';
@@ -21,45 +21,61 @@ const getSizeStyles = (size: ButtonSizes) => {
 const getColorStyles = (
   variant: ButtonVariants,
   overlay: boolean,
-  loading?: boolean
+  loading?: boolean,
+  outline?: boolean
 ) => {
   const VARIANTS = {
     primary: {
-      default: 'border-primary-default text-primary-default',
+      outline: 'bg-primary-content border-primary-default text-primary-default',
       overlay: 'bg-primary-default text-primary-content',
       loading: 'bg-primary-default text-primary-default',
+      default: 'border-primary-default bg-primary-default text-primary-content',
     },
     secondary: {
-      default: 'border-secondary-default text-secondary-default',
+      outline:
+        'bg-secondary-content border-secondary-default text-secondary-default',
       overlay: 'bg-secondary-default text-secondary-content',
       loading: 'bg-secondary-default text-secondary-default',
+      default:
+        'border-secondary-default bg-secondary-default text-secondary-content',
     },
     accent: {
-      default: 'border-accent-default text-accent-default',
+      outline: 'bg-primary-content border-accent-default text-accent-default',
       overlay: 'bg-accent-default text-accent-content',
       loading: 'bg-accent-default text-accent-default',
+      default: 'border-accent-default bg-accent-default text-accent-content',
     },
     light: {
-      default: 'border-light-default text-light-content',
+      outline: 'bg-light-default border-light-default text-light-content',
       overlay: 'bg-light-default text-light-content',
       loading: 'bg-light-default text-light-default',
+      default: 'border-light-default bg-light-default text-light-content',
     },
     dark: {
-      default: 'border-dark-default text-dark-default',
+      outline: 'bg-primary-content border-dark-default text-dark-default',
       overlay: 'bg-dark-default text-dark-content',
       loading: 'bg-dark-default text-dark-default',
+      default: 'border-dark-default bg-dark-default text-dark-content',
     },
     success: {
-      default: 'border-success-default text-success-default',
+      outline: 'bg-primary-content border-success-default text-success-default',
       overlay: 'bg-success-default text-success-content',
       loading: 'bg-success-default text-success-default',
+      default: 'border-success-default bg-success-default text-success-content',
     },
     error: {
-      default: 'border-error-default text-error-default',
+      outline: 'bg-primary-content border-error-default text-error-default',
       overlay: 'bg-error-default text-error-content',
       loading: 'bg-error-default text-error-default',
+      default: 'border-error-default bg-error-default text-error-content',
     },
   };
+
+  if (!outline && overlay) return VARIANTS[variant].outline;
+
+  if (outline && overlay) return VARIANTS[variant].overlay;
+
+  if (outline) return VARIANTS[variant].outline;
 
   if (overlay) return VARIANTS[variant].overlay;
 
@@ -72,9 +88,12 @@ const getStyles = (
   variant: ButtonVariants,
   size: ButtonSizes,
   overlay: boolean,
-  loading?: boolean
+  loading?: boolean,
+  outline?: boolean
 ) => {
-  return `${getColorStyles(variant, overlay, loading)} ${getSizeStyles(size)}`;
+  return `${getColorStyles(variant, overlay, loading, outline)} ${getSizeStyles(
+    size
+  )}`;
 };
 
 const Button: FC<ButtonProps> = ({
@@ -83,6 +102,7 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
   text,
   loading = false,
+  outline = false,
   onClick,
   ...props
 }) => {
@@ -92,11 +112,12 @@ const Button: FC<ButtonProps> = ({
     <button
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`relative transform disabled:bg-opacity-50 transition-transform shadow-lg active:scale-95 border-2 ${getStyles(
+      className={`relative w-fit h-fit transform transition-transform shadow-lg active:scale-95 border-2 ${getStyles(
         variant,
         size,
         false,
-        loading
+        loading,
+        outline
       )} group`}
       type="button"
       onClick={onClick}
@@ -123,7 +144,7 @@ const Button: FC<ButtonProps> = ({
             />
           </svg>
         )}
-        {text}
+        <span className={`${loading && 'invisible'}`}>{text}</span>
       </span>
       {!loading && (
         <div
@@ -136,10 +157,10 @@ const Button: FC<ButtonProps> = ({
             left: 0,
             right: 0,
             bottom: 0,
-            transition: 'all .3s ease-out',
-            clipPath: hover ? 'circle(100%)' : 'circle(0%)',
+            transition: 'all .2s ease-out',
+            clipPath: hover ? 'inset(0% 0% 0% 0%)' : 'inset(100% 0% 0% 0%)',
           }}
-          className={`${getStyles(variant, size, true)}`}
+          className={`${getStyles(variant, size, true, loading, outline)}`}
         >
           <span className={`uppercase font-light tracking-wider`}>
             {!loading && text}

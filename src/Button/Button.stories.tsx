@@ -17,6 +17,52 @@ const Template: Story<ButtonProps> = args => {
   return <Button {...args} />;
 };
 
+const OverviewTemplate: Story<ButtonProps> = () => {
+  return (
+    <div className="flex flex-col">
+      <div className="flex flex-col">
+        <p className="font-semibold text-lg my-4">Outline buttons</p>
+        <div className="flex gap-x-4">
+          <Button variant="primary" outline text="Primary" />
+          <Button variant="secondary" outline text="secondary" />
+          <Button variant="accent" outline text="accent" />
+          <Button variant="light" outline text="light" />
+          <Button variant="dark" outline text="dark" />
+          <Button variant="success" outline text="success" />
+          <Button variant="error" outline text="error" />
+          <Button variant="error" loading outline text="error" />
+        </div>
+        <p className="font-semibold text-lg my-4">Filled buttons</p>
+        <div className="flex gap-x-4">
+          <Button variant="primary" text="Primary" />
+          <Button variant="secondary" text="secondary" />
+          <Button variant="accent" text="accent" />
+          <Button variant="light" text="light" />
+          <Button variant="dark" text="dark" />
+          <Button variant="success" text="success" />
+          <Button variant="error" text="error" />
+          <Button variant="error" loading text="error" />
+        </div>
+        <p className="font-semibold text-lg my-4">Button sizes</p>
+        <div className="flex gap-x-4">
+          <Button variant="primary" size="large" text="Large" />
+          <Button variant="secondary" size="medium" text="Medium" />
+          <Button variant="accent" size="small" text="Small" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Overview = OverviewTemplate.bind({});
+Overview.args = {
+  variant: 'primary',
+  disabled: false,
+  text: 'Primary',
+  size: 'medium',
+  loading: false,
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',

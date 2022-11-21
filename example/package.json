@@ -8,6 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "emil-component-lib": "^0.0.4",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {
