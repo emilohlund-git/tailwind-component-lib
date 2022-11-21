@@ -1,6 +1,9 @@
 # Tailwind Components
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+## Storybook
+[![Chromatic Storybook](https://raw.githubusercontent.com/storybookjs/brand/main/badge/badge-storybook.svg)](https://637bc3c27472f0817bd0eeed-oqkwidjwcq.chromatic.com/) Check out the component library 
+
 ## Installing
 ```
 yarn add @emilohlund-git/tailwind-component-lib
