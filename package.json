@@ -1,5 +1,5 @@
 {
-  "version": "v0.1.5-alpha",
+  "version": "0.1.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -25,7 +25,8 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
+    "push": "yarn version patch && git push"
   },
   "peerDependencies": {
     "react": ">=16"
