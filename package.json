@@ -3,7 +3,10 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "repository": "https://github.com/emilohlund-git/tailwind-component-lib.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilohlund-git/tailwind-component-lib.git"
+  },
   "files": [
     "dist",
     "src"
@@ -21,7 +24,8 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook",
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -38,7 +42,9 @@
     "trailingComma": "es5"
   },
   "name": "@emilohlund-git/tailwind-component-lib",
-  "author": "Emil Ölund",
+  "author": {
+    "name": "Emil Ölund"
+  },
   "module": "dist/tailwind-component-lib.esm.js",
   "size-limit": [
     {
@@ -70,6 +76,7 @@
     "@types/react-dom": "^18.0.9",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
+    "chromatic": "^6.11.4",
     "husky": "^8.0.2",
     "identity-obj-proxy": "^3.0.0",
     "postcss": "^8.4.19",
@@ -94,5 +101,11 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/emilohlund-git/tailwind-component-lib/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/emilohlund-git/tailwind-component-lib#readme",
+  "_id": "@emilohlund-git/tailwind-component-lib@0.0.5"
 }

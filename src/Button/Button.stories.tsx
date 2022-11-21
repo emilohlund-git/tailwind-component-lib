@@ -92,7 +92,7 @@ Accent.args = {
 
 export const Light = Template.bind({});
 Light.args = {
-  variant: 'light',
+  variant: 'primary',
   disabled: false,
   text: 'Light',
   size: 'medium',
