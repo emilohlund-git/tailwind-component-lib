@@ -1,6 +1,12 @@
 # Tailwind Components
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+## Installing
+```
+yarn add emil-component-lib
+npm i emil-component-lib
+```
+
 ## Development
 ### Testing
 ```
