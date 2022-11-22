@@ -148,6 +148,7 @@ const Button: FC<ButtonProps> = ({
       </span>
       {!loading && (
         <div
+          data-testid="overlay"
           style={{
             display: 'flex',
             alignItems: 'center',
