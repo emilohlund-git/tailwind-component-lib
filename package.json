@@ -101,5 +101,6 @@
     "url": "https://github.com/emilohlund-git/tailwind-component-lib/issues"
   },
   "readme": "ERROR: No README data found!",
-  "homepage": "https://github.com/emilohlund-git/tailwind-component-lib#readme"
+  "homepage": "https://github.com/emilohlund-git/tailwind-component-lib#readme",
+  "version": "0.0.1"
 }
