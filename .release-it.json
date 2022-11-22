@@ -3,6 +3,12 @@
     "commitMessage": "🎉 Release v${version}"
   },
   "github": {
-    "release": true
+    "release": false,
+    "commit": true,
+    "tag": true,
+    "push": true
+  },
+  "npm": {
+    "publish": false
   }
 }
