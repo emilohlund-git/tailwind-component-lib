@@ -729,6 +729,13 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@emilohlund-git/tailwind-component-lib@1.0.18":
+  version "1.0.18"
+  resolved "https://npm.pkg.github.com/download/@emilohlund-git/tailwind-component-lib/1.0.18/87d53ce8c1b81902aaed3c7c1f4db458d29081c3#87d53ce8c1b81902aaed3c7c1f4db458d29081c3"
+  integrity sha512-kMPfVPKox8C3sse3ImcWuFz9F4Jii2J1KJwngFr11T5cKjCN/HPnkxZD70TbFkklGYWAZnyeIED4GYB9f9qvmw==
+  dependencies:
+    "@headlessui/react" "^1.7.4"
+
 "@headlessui/react@^1.7.4":
   version "1.7.4"
   resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.4.tgz"
@@ -2086,13 +2093,6 @@ elliptic@^6.5.3:
     inherits "^2.0.4"
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
-
-emil-component-lib@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/emil-component-lib/-/emil-component-lib-0.0.4.tgz#b521ba2c43bc868c25374f14fd1c0ed6c5dbd422"
-  integrity sha512-u9UsoPg1ZDk0B4/gdW8p4kUDdfTxCRKTaHShRukQe+9uR6KhbF9Y57yuc0KsJ34LT7i2lS0qVi/o3MToNkphdw==
-  dependencies:
-    "@headlessui/react" "^1.7.4"
 
 encodeurl@~1.0.2:
   version "1.0.2"

@@ -1,8 +1,8 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Button } from 'emil-component-lib';
-import 'emil-component-lib/dist/tailwind.css';
+import { Button } from '@emilohlund-git/tailwind-component-lib';
+import '@emilohlund-git/tailwind-component-lib/dist/tailwind.css';
 
 const App = () => {
   return (
