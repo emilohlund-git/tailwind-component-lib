@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5-0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -108,6 +108,5 @@
     "url": "https://github.com/emilohlund-git/tailwind-component-lib/issues"
   },
   "readme": "ERROR: No README data found!",
-  "homepage": "https://github.com/emilohlund-git/tailwind-component-lib#readme",
-  "_id": "@emilohlund-git/tailwind-component-lib@0.0.5"
+  "homepage": "https://github.com/emilohlund-git/tailwind-component-lib#readme"
 }
