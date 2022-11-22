@@ -19,7 +19,6 @@
     "build": "tsdx build && yarn build-tailwind",
     "build-tailwind": "set NODE_ENV=production && npx tailwindcss -o ./dist/tailwind.css --minify",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
     "prepare": "yarn build && husky install",
     "size": "size-limit",
     "analyze": "size-limit --why",
@@ -27,15 +26,10 @@
     "storybook:build": "build-storybook",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "push": "git push",
-    "push:test": "npx release-it"
+    "push:test": "yarn test && npx release-it"
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint && yarn test"
-    }
   },
   "prettier": {
     "printWidth": 80,
@@ -79,7 +73,7 @@
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
     "chromatic": "^6.11.4",
-    "husky": "^8.0.0",
+    "husky": "^8.0.2",
     "identity-obj-proxy": "^3.0.0",
     "postcss": "^8.4.19",
     "react": "^18.2.0",
