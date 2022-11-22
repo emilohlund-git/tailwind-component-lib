@@ -26,7 +26,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
-    "push": "yarn version --patch && git push"
+    "push": "yarn version --patch && git push",
+    "push:test": "npx release-it"
   },
   "peerDependencies": {
     "react": ">=16"
