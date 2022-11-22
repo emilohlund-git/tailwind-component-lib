@@ -13,11 +13,14 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Use Node.js 16.x🚧
+      - name: Use Node.js 16.x 🚧
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: ‘yarn’
+
+      - name: Initialize yarn 🚧
+        run: yarn
 
       - name: Build Package 🛠
         run: yarn build
