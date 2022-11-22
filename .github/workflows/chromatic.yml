@@ -6,8 +6,7 @@ name: 'Chromatic'
 # Event for the workflow
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches: [main]
 
 # List of jobs
 jobs:
