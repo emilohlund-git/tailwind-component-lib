@@ -1,7 +1,7 @@
 name: github package
 on:
   push:
-    branch:
+    branches:
       - master
 jobs:
   build:
