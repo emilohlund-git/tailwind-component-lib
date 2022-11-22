@@ -1,4 +1,5 @@
-name: github package
+name: Release & Publish
+
 on:
   push:
     tags:
@@ -11,7 +12,11 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+      - name: Setup Node
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
         with:
