@@ -2,7 +2,8 @@ name: github package
 on:
   push:
     tags:
-      - '*.*.*'
+      - 'v*.*.*'
+
 jobs:
   build:
     if: github.event.pull_request.merged == true
