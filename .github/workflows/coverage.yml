@@ -11,19 +11,23 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout repository 🚧
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Set up Node.js ${{ matrix.node-version }} 🚧
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
 
-      - name: Install dependencies
+      - name: Initialize yarn 🚧
+        run: yarn
+
+      - name: Install dependencies 🛠
         run: yarn install
 
-      - name: Run the tests
+      - name: Run the tests with coverage 🦺
         run: yarn test -- --coverage
 
-      - name: Upload coverage to Codecov
+      - name: Upload coverage to Codecov 🚀
         uses: codecov/codecov-action@v3
