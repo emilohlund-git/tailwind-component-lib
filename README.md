@@ -10,6 +10,18 @@ yarn add @emilohlund-git/tailwind-component-lib
 npm i @emilohlund-git/tailwind-component-lib
 ```
 
+If Tailwind isn't installed in your project you have to manually import the tailwind.css file from the library. E.x.
+```TSX
+import '@emilohlund-git/tailwind-component-lib/dist/tailwind.css'
+```
+If Tailwind is installed you can omit the css file import and include the component library in the purge path of the tailwind.config.css
+```JS
+// new Project tailwind.config.js
+purge: [
+  './node_modules/@emilohlund-git/tailwind-component-lib/dist/*.js',
+],
+```
+
 ### Components
 
 Usage of components (after the library installed as a dependency into another project) will look like:
@@ -26,17 +38,4 @@ const App = () => (
 );
 
 export default App;
-```
-
-### Obs!
-If Tailwind isn't installed in your project you have to manually import the tailwind.css file from the library. E.x.
-```TSX
-import 'emil-component-lib/dist/tailwind.css'
-```
-If Tailwind is installed you can omit the css file import and include the component library in the purge path of the tailwind.config.css
-```JS
-// new Project tailwind.config.js
-purge: [
-  './node_modules/emil-component-lib/dist/*.js',
-],
 ```
