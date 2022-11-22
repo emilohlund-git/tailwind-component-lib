@@ -27,7 +27,7 @@
     "storybook:build": "build-storybook",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "push": "git push",
-    "push:test": "yarn config set version-tag-prefix v && npx release-it"
+    "push:test": "yarn config set version-tag-prefix v && npx release-it --'hooks.after:release=`echo Successfully released ${name} v${version} to ${repo.repository}.`'"
   },
   "peerDependencies": {
     "react": ">=16"
