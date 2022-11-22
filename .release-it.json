@@ -4,8 +4,8 @@
   },
   "github": {
     "release": false,
-    "commit": true,
-    "tag": true,
+    "commit": false,
+    "tag": false,
     "push": true
   },
   "npm": {
