@@ -12,13 +12,12 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: Use Node.js 16.x🚧
-        uses: actions/setup-node@v3
+      - name: Use Node.js 16.x 🚧
+        uses: actions/setup-node@v1
         with:
-          node-version: [16.x]
+          node-version: ${{ matrix.node-version }}
           cache: ‘yarn’
       - name: Run Tests and Build 🦺
         run: yarn build

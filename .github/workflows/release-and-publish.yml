@@ -7,14 +7,27 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
+      - name: Use Node.js 16.x🚧
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: ‘yarn’
+
       - name: Build Package 🛠
         run: yarn build
+
       - name: Release 🚀
         run: npx semantic-release --debug
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
