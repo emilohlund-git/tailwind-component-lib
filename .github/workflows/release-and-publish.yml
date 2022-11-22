@@ -1,63 +1,23 @@
 name: Release & Publish
 
 on:
-  pull_request:
-    types: [closed]
+  push:
+    branches: [main]
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Check request branch
-        uses: actions-ecosystem/action-release-label@v1
-        id: release-label
-        if: ${{ github.event.pull_request.merged == true }}
-
-      - name: Get the latest tag
-        uses: actions-ecosystem/action-get-latest-tag@v1
-        id: get-latest-tag
-        if: ${{ steps.release-label.outputs.level != null }}
-
-      - name: Set semver version
-        uses: actions-ecosystem/action-bump-semver@v1
-        id: bump-semver
-        if: ${{ steps.release-label.outputs.level != null }}
-        with:
-          current_version: ${{ steps.get-latest-tag.outputs.tag }}
-          level: ${{ steps.release-label.outputs.level }}
-
-      - name: Push tag
-        uses: actions-ecosystem/action-push-tag@v1
-        if: ${{ steps.release-label.outputs.level != null }}
-        with:
-          tag: ${{ steps.bump-semver.outputs.new_version }}
-          message: '${{ steps.bump-semver.outputs.new_version }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
-
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-  publish:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Setup .npmrc file to publish to GitHub Packages
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://npm.pkg.github.com'
-          always-auth: true
-      - run: yarn
-      - run: yarn publish
+      - name: Build Package 🛠
+        run: yarn build
+      - name: Release 🚀
+        run: npx semantic-release --debug
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: example/dist
+          token: ${{secrets.GITHUB_TOKEN}}
