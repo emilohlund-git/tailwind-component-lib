@@ -1,7 +1,10 @@
 name: github package
 on:
-  release:
-    types: [created, prereleased, released]
+  push:
+    branches:
+      - master
+    tags:
+      - v*
 jobs:
   build:
     runs-on: ubuntu-latest
