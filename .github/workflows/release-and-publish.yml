@@ -21,11 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Initialize yarn 🚧
+      - name: Build & Test Package 🛠
         run: yarn
-
-      - name: Build Package 🛠
-        run: yarn build
 
       - name: Release 🚀
         run: npx semantic-release --debug
