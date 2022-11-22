@@ -1,12 +1,12 @@
 name: github package
 on:
   push:
-    tags:
-      - v*
+    branch:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: startsWith(github.event.ref, 'refs/tags/v')
     permissions:
       contents: read
       packages: write
