@@ -7,7 +7,7 @@ name: 'Chromatic'
 on:
   push:
     tags:
-      - '*.*.*'
+      - 'v*.*.*'
 
 # List of jobs
 jobs:
