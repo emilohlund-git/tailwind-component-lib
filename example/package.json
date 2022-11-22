@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "emil-component-lib": "^1.0.17",
+    "@emilohlund-git/tailwind-component-lib": "1.0.18",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {
