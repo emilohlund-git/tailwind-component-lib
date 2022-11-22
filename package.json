@@ -27,14 +27,14 @@
     "storybook:build": "build-storybook",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "push": "git push",
-    "push:test": "npx release-it --'hooks.after:release=`echo Successfully released ${name} v${version} to ${repo.repository}.`'"
+    "push:test": "npx release-it"
   },
   "peerDependencies": {
     "react": ">=16"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint && yarn test"
     }
   },
   "prettier": {
